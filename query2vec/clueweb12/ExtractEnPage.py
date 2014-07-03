@@ -7,7 +7,7 @@ folderidx =sys.argv[1]
 
 foldername = '/home/cluo/publicdata/DiskB/ClueWeb12_'+folderidx
 pages = set()
-for l in open('../ref/enpages/txt').readlines():
+for l in open('../ref/enpages.txt').readlines():
     pages.add(l.strip())
 
 
