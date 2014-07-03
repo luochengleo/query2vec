@@ -33,3 +33,4 @@ for folder in os.listdir(foldername):
                 fout.write(content)
                 fout.close()
         os.system('rm '+warcfilename)
+        
