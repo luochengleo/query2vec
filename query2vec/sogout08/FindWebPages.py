@@ -12,7 +12,7 @@ files = os.listdir('/work/caoyj/SogouT')
 for f in files:
     if '.7z' in f:
         doccount =0
-        datacontent = os.popen('7z e -so /work/caoyj/SogouT/'+f)
+        datacontent = os.popen('7za e -so /work/caoyj/SogouT/'+f)
         l  = datacontent.readline()
         
         write = False
