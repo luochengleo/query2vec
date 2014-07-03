@@ -32,4 +32,4 @@ for folder in os.listdir(foldername):
                     fout.write(l+'\n')
             fout.write(content)
             fout.close()
-    os.system('rm '+filename)
+    os.system('rm '+warcfilename)
