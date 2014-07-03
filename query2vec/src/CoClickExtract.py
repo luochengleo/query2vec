@@ -15,10 +15,10 @@ for l in lines:
 		urls[url] = set()
 
 for l in lines:
-        segs = l.strip().split(' ')
-        if len(segs)==3:
-                query = segs[0]
-                url = segs[1]
+	segs = l.strip().split(' ')
+	if len(segs)==3:
+		query = segs[0]
+		url = segs[1]
 		urls[url].add(query)
 
 fout = open('../data/coclicktext/'+no+'.dat','w')
