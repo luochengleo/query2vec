@@ -26,7 +26,7 @@ foreach $fn (@filename){
 		$linecount=0;
 		print ("process: $dir$fn\n");
 		#open(PRE,$dir.$fn);
-		open(PRE,"7zr x -so /work/caoyj/SogouT/".$fn." |");
+		open(PRE,"/usr/bin/7zr x -so /work/caoyj/SogouT/".$fn." |");
 		while($line=<PRE>){
 			if($line=~/^\<DOCNO\>(.+?)\<\/DOCNO\>/){
 				$linecount++;
