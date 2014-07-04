@@ -15,7 +15,6 @@ print len(docs),' docs need to find'
     
 files = os.listdir('/work/caoyj/SogouT')
 for f in files:
-    
     if '.7z' in f:
         idx = int(f.split('.')[1])
         if idx%12==mod:
