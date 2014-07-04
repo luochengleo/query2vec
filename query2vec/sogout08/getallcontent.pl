@@ -1,9 +1,6 @@
-
-
 @docs;
 @docname;
-$docname[0]="../ref/docs.txt";
-
+$docname[0]="imine11.cn";
 
 $len=1;
 
@@ -11,8 +8,8 @@ for($i=0;$i<$len;$i++){
 	open (INFILE,$docname[$i]);
 	while($line=<INFILE>){
 		@arr=split(" ",$line);
-		if(true){
-			$docid=arr;
+		if(@arr>3){
+			$docid=$arr[2];
 			$docs[$i]{$docid}="unknown";
 			#print "load $docid\n";
 		}
