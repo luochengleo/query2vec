@@ -5,4 +5,4 @@ for i in range(0,32,1):
         num = '0'+str(i)
     else:
         num = str(i)
-    fout.write('nohup python FindMoreWebPages.py '+num+' > '+num+'.log & \n')
+    fout.write('nohup python RawCount.py '+num+' > '+num+'.log & \n')

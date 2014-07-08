@@ -14,7 +14,7 @@ for l in open('../ref/docs.txt').readlines():
 print len(docs),' docs need to find'
 
 files = os.listdir('/home/cluo/publicdata/sogout08/')
-fout = open('../data/count/'+str(mod)+'.count','w')
+
 for f in files:
     if '.7z' in f:
         idx = int(f.split('.')[1])
@@ -30,8 +30,9 @@ for f in files:
                 count +=1
                 for item  in docs:
                     if item in l:
+                        fout = open('../data/count/'+str(mod)+'.count','a')
                         fout.write('Find '+ item +' in the '+str(count)+ ' file '+f+'\n')
-                        
+                        fout.close()
                 l = datacontent.readline()
 
             
