@@ -28,11 +28,12 @@ for f in files:
             count = 0
             while l !='':
                 count +=1
-                for item  in docs:
-                    if item in l:
-                        fout = open('../data/count/'+str(mod)+'.count','a')
-                        fout.write('Find '+ item +' in the '+str(count)+ ' file '+f+'\n')
-                        fout.close()
+                if '-' in l:
+                    for item  in docs:
+                        if item in l:
+                            fout = open('../data/count/'+str(mod)+'.count','a')
+                            fout.write('Find '+ item +' in the '+str(count)+ ' file '+f+'\n')
+                            fout.close()
                 l = datacontent.readline()
 
             
