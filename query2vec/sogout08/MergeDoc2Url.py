@@ -1,8 +1,3 @@
-'''
-Created on 2014Äê7ÔÂ10ÈÕ
-
-@author: Administrator
-'''
 
 doc2url = dict()
 # 20dab857d4b6462b-fc09de91451034f0
