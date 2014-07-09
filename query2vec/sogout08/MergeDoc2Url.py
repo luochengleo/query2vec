@@ -26,7 +26,7 @@ count = 0
 for l in open('log.txt').readlines():
     count +=1
     print 'match',count
-    segs = l.strip().split('\t')
+    segs = l.strip().split(' ')
     flag = segs[0]
     id = segs[1]
     matchout.write(flag+'\t'+id+'\t')
