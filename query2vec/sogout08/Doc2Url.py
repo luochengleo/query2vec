@@ -25,8 +25,8 @@ for f in files:
             while l !='':
                 if '<DOC>' in l:
                     content = l
-                    content += l.readline()
-                    content += l.readline()
+                    content += datacontent.readline()
+                    content += datacontent.readline()
                     m = pattern.search(content)
                     if m :
                         fout.write(m.group(1)+'\t'+m.group(3)+'\n')
