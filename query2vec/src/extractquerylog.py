@@ -23,23 +23,36 @@ for file in files:
         datacontent = os.popen("7z e -so " + f)
         line = datacontent.readline()
         while line != '':
+            type = ''
+            if 'GET /pv.gif' in line:
+                type = 'P'
+            if 'GET /cl.gif' in line:
+                type = 'C'
+            
             uid = re.compile(r'(?<=uigs_cookie=SUID%)(\S{34})')
-            uuid = uid.search(line)
-            if uuid:
+            uuids = uid.search(line)
+            uuid = ''
+            if uuids:
                 uuid = uuid.groups()[0]
-                qr = re.compile(r'(?<=query=)(.*?)(?=&rn)')
-                tm = re.compile(r'\[(.*?)\]')
-                querys = qr.search(line)
-                if querys:
-                    query = urllib.unquote(urllib.unquote(querys.groups()[0])).replace('+', '')
-                    times = tm.search(line)
-                    if times :
-                        times = times.groups()[0]
-                        if query !=''  and uuid !='':
-                            try:
-                                tm = times.split(' ')[1].split(':')[1]
-                                fout.write(query  +'\t'+uuid+'\t'+tm+ '\n')
-                            except:
-                                pass
+
+            qr = re.compile(r'(?<=query=)(.*?)(?=&rn)')
+            querys = qr.search(line)
+            query = ''
+            if querys:
+                query = urllib.unquote(urllib.unquote(querys.groups()[0])).replace('+', '')
+            
+            tm = re.compile(r'\[(.*?)\]')    
+            times = tm.search(line)
+            time = ''
+            if times :
+                time = times.groups()[0]
+            
+            u = re.compile('(?<=href%3D)(.*?)(?=&txt)')
+            urls = u.search(line)
+            url = ''
+            if urls:
+                url = url.groups()[0]
+            
+            
             line = datacontent.readline()
 fout.close()
