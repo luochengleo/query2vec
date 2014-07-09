@@ -1,4 +1,6 @@
 
+
+
 doc2url = dict()
 # 20dab857d4b6462b-fc09de91451034f0
 errorout = open('../data/mergedoc2url.error','w')
