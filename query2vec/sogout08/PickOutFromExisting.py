@@ -10,7 +10,7 @@ for l in open('../ref/docs.txt').readlines():
 print len(allid)
 count = len(allid)
 
-fout = open('../data/log.txt','w')
+fout = open('log.txt','w')
 for l in allid:
     if l.strip()+'.dhtml' in files1:
         open('../data/fromexist/'+l.strip()+'.html','w').write(open('../data/exist/'+l.strip()+'.dhtml').read())
