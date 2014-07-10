@@ -1,7 +1,10 @@
-
-
-
 doc2url = dict()
+for l in open('log.txt').readlines():
+    segs = l.strip().split(' ')
+    flag = segs[0]
+    id = segs[1]
+    doc2url[id] = 'UNFOUND'
+
 # 20dab857d4b6462b-fc09de91451034f0
 errorout = open('../data/mergedoc2url.error','w')
 for i in range(0,24,1):
