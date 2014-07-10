@@ -33,9 +33,6 @@ for l in open('log.txt').readlines():
     flag = segs[0]
     id = segs[1]
     matchout.write(flag+'\t'+id+'\t')
-    if id in doc2url.keys():
-        matchout.write(doc2url[id]+'\n')
-    else:
-        matchout.write('NOTFOUND\n')
+    matchout.write(doc2url[id]+'\n')
 matchout.close()
     
