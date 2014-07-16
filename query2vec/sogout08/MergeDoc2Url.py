@@ -22,7 +22,7 @@ for i in range(0,24,1):
             
 result = open('../data/sogoutdoc2id/merge.txt','w')
 for item in doc2url:
-    result.write(item+'\t'+doc2url[item]+'\t')
+    result.write(item+'\t'+doc2url[item]+'\n')
 
 matchout = open('../data/doc2id.match','w')
 count = 0
