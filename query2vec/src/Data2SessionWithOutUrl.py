@@ -25,13 +25,21 @@ fin.close()
 
 def session2text(lt):
     text = ''
+    count = 0
     for (q,s,t) in lt:
-        text = text+' '+q
-    return text+'\n'
+        if 'C@' in q:
+            pass
+        if 'P@' in q:
+            text = text+' '+q
+            count +=1
+    if count >0:
+        return text+'\n'
+    else:
+        return ''
 
 
 fin = open('../data/querylog/'+sys.argv[1]+'.dat')
-fout = open('../data/sessiontext/'+sys.argv[1]+'.txt','w')
+fout = open('../data/sessiontextwithouturl/'+sys.argv[1]+'.txt','w')
 line = fin.readline()
 count = 0
 currtime = 0
